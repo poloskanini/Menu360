@@ -1,0 +1,287 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000;
+}
+
+/* Container-menu */
+
+.container-menu {
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Burger Menu (rond) */
+.btn-menu {
+  background: #fff;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 20;
+  transition: all .2s ease-in-out;
+}
+
+/* Burger Menu (lignes) */
+.ligne {
+  width: 40px;
+  height: 5px;
+  background: #333;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all .1s ease;
+}
+
+.ligne::before {
+  content: '';
+  width: 40px;
+  height: 5px;
+  background: #333;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 10px;
+  transition: all .1s ease;
+}
+
+.ligne::after {
+  content: '';
+  width: 40px;
+  height: 5px;
+  background: #333;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  transition: all .1s ease;
+}
+
+/* Animation des lignes */
+.container-menu.active .ligne::before {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+.container-menu.active .ligne::after {
+  transform: rotate(-45deg);
+  top: 50%;
+}
+
+.container-menu.active .ligne {
+  background-color: transparent;
+}
+
+/* BLOBS */
+.icone {
+  width: 50px;
+}
+
+.blob {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.blob-1 {
+  background-color: #f1f1f1;
+  transition: all .1s 0.1s ease-in-out;
+}
+
+.blob-2 {
+  background-color: #c7ceea;
+  transition: all .1s 0.2s ease-in-out;
+}
+
+.blob-3 {
+  background-color: #ffdac1;
+  transition: all .1s 0.3s ease-in-out;
+}
+
+.blob-4 {
+  background-color: #ff9aa2;
+  transition: all .1s 0.4s ease-in-out;
+}
+
+.blob-5 {
+  background-color: #ffffd8;
+  transition: all .1s 0.5s ease-in-out;
+}
+
+.blob-6 {
+  background-color: #b5ead7;
+  transition: all .1s 0.6s ease-in-out;
+}
+
+.blob-7 {
+  background-color: gold;
+  transition: all .1s 0.7s ease-in-out;
+}
+
+.blob-8 {
+  background-color: darksalmon;
+  transition: all .1s 0.8s ease-in-out;
+}
+
+
+/* Animation des Blobs */
+
+.container-menu.active .blob-1 {
+  left: 100%;
+}
+
+.container-menu.active .blob-2 {
+  top: 85%;
+  left: 85%;
+}
+
+.container-menu.active .blob-3 {
+  top: 100%;
+}
+
+.container-menu.active .blob-4 {
+  top: 85%;
+  left: 15%;
+}
+
+.container-menu.active .blob-5 {
+  left: 0%;
+}
+
+.container-menu.active .blob-6 {
+  left: 15%;
+  top: 15%;
+}
+
+.container-menu.active .blob-7 {
+  top: 0;
+}
+
+.container-menu.active .blob-8 {
+  top: 15%;
+  left: 85%;
+}
+
+/* Blob-text */
+
+.blob-text {
+  border-radius: 3px;
+  box-shadow: 1px 1px 8px #fff;
+  position: absolute;
+  width: 200px;
+  line-height: 1.4;
+  padding: 15px;
+  pointer-events: none;
+}
+
+.blob-1 .blob-text-1 {
+  background-color: #f1f1f1;
+  left: 150%;
+  opacity: 0;
+  transition: opacity .2s ease-out;
+}
+
+.container-menu.active .blob-1:hover .blob-text-1 {
+  opacity: 1;;
+}
+
+.blob-2 .blob-text-2 {
+  background-color: #c7ceea;
+  top: 100%;
+  left: 150%;
+  opacity: 0;
+  transition: opacity .2s ease-out;
+}
+
+.container-menu.active .blob-2:hover .blob-text-2 {
+  opacity: 1;
+}
+
+.blob-3 .blob-text-3 {
+  background-color: #ffdac1;
+  top: 150%;
+  opacity: 0;
+  transition: opacity .2s ease-out;
+}
+
+.container-menu.active .blob-3:hover .blob-text-3 {
+  opacity: 1;
+}
+
+.blob-4 .blob-text-4 {
+  background-color: #ff9aa2;
+  top: 100%;
+  right: 150%;
+  opacity: 0;
+  transition: opacity .2s ease-out;
+}
+
+.container-menu.active .blob-4:hover .blob-text-4 {
+  opacity: 1;
+}
+
+.blob-5 .blob-text-5 {
+  background-color: #ffffd8;
+  right: 150%;
+  opacity: 0;
+  transition: opacity .2s ease-out;
+}
+
+.container-menu.active .blob-5:hover .blob-text-5 {
+  opacity: 1;
+}
+
+.blob-6 .blob-text-6 {
+  background-color: #b5ead7;
+  right: 150%;
+  bottom: 100%;
+  opacity: 0;
+  transition: opacity .2s ease-out;
+}
+
+.container-menu.active .blob-6:hover .blob-text-6 {
+  opacity: 1;
+}
+
+.blob-7 .blob-text-7 {
+  background-color: gold;
+  bottom: 150%;
+  opacity: 0;
+  transition: opacity .2s ease-out;
+}
+
+.container-menu.active .blob-7:hover .blob-text-7 {
+  opacity: 1;
+}
+
+.blob-8 .blob-text-8 {
+  background-color: darksalmon;
+  left: 150%;
+  bottom: 150%;
+  opacity: 0;
+  transition: opacity .2s ease-out;
+}
+
+.container-menu.active .blob-8:hover .blob-text-8 {
+  opacity: 1;
+}
